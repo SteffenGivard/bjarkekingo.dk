@@ -19,7 +19,7 @@ body {
 /*  text-align: center;*/
   color: var(--main-text-color);
   background-color: var(--main-background-color);
-  background-image: url('/assets/images/presenting.jpg');
+  background-image: url('../../assets/images/presenting.jpg');
   background-repeat: no-repeat;
   background-position: left bottom;
   background-blend-mode: screen;
