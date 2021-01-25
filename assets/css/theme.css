@@ -1,0 +1,87 @@
+:root {
+  /* Main */
+  --main-background-color:     #c3e386;
+  --main-text-color:           #577c0e;
+  /* Cards */
+  --card-background-color:     white;
+  --card-text-color:           #484089;
+}
+
+body,
+html {
+  height: 100vh;
+}
+
+body {
+  padding: 10%;
+/*  text-align: center;*/
+  color: var(--main-text-color);
+  background-color: var(--main-background-color);
+  background-image: url('/assets/images/presenting.jpg');
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-blend-mode: screen;
+  background-size: cover;
+}
+
+@media (orientation: landscape) {
+  body { display: flex; }
+  .container { margin-top: auto; }
+}
+
+/* Better layout on wide screen */
+@media screen and (min-width: 1280px) {
+  body { padding: 7%; }
+}
+
+.container {
+  max-width: 800px;
+}
+
+
+a,
+a:visited {
+  color: inherit;
+}
+
+h1 {
+/*  text-align: center;*/
+/*  margin-top: 10vh;*/
+/*  font-size: 5rem;*/
+  margin-bottom: -0.25em;
+}
+
+.lead {
+  margin-bottom: 3rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+
+/*
+ * Buttons
+ */
+
+.buttons { margin-top: 1.5rem; }
+
+.button {
+  margin-right: 0.2rem;
+  padding: .8rem;
+  border: 1px solid rgba(87, 124, 14, 0.35);
+  background: rgba(87, 124, 14, 0.2);
+  fill: var(--main-text-color);
+  border-radius: 2px;
+}
+
+.button:hover,
+.button:active,
+.button:focus {
+  border: 1px solid rgba(87, 124, 14, 0.65);
+  background: rgba(87, 124, 14, 0.3);
+}
+
+/* Logos */
+
+.icon {
+  max-width: 1.25em;
+}
