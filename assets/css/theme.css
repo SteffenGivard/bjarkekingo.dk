@@ -13,6 +13,8 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   padding: 10%;
 /*  text-align: center;*/
   color: var(--main-text-color);
@@ -84,4 +86,17 @@ h1 {
 
 .icon {
   max-width: 1.25em;
+}
+
+
+/*
+ * Credits
+ */
+
+.credits {
+  position: absolute;
+  bottom: 10%;
+  margin-bottom: -2rem;
+  font-size: small;
+  opacity: 0.5;
 }
