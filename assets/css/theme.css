@@ -78,8 +78,76 @@ h1 {
   background: rgba(87, 124, 14, 0.3);
 }
 
+.book {
+  margin-right: 0.2rem;
+  padding: .8rem;
+  border: 1px solid rgba(87, 124, 14, 0.35);
+  background: rgba(87, 124, 14, 0.2);
+  fill: var(--main-text-color);
+  border-radius: 2px;
+  margin-top: 0.5rem;
+}
+
+.book:first-child {
+  margin-top: 2rem;
+}
+
 /* Logos */
 
 .icon {
   max-width: 1.25em;
+}
+
+.form-popup {
+  display: none;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+form {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 0 20px 20px 20px;
+  border: 1px solid #888;
+  width: 30%; /* Could be more or less, depending on screen size */
+}
+
+.btn-cancel {
+  border: none;
+  background-color: transparent;
+  float: right;
+  font-size: 1.3rem;
+  margin-right: -1rem;
+}
+
+.open-button {
+  font-size: 0.8rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+.button-margin {
+  margin-left: 2000.2rem;
+}
+
+.flex-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.more-about-me {
+  grid-column-end: none;
+}
+
+.more-about-me a {
+  cursor: pointer;
 }
