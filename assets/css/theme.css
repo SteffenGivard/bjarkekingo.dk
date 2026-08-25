@@ -1,153 +1,231 @@
 :root {
-  /* Main */
-  --main-background-color:     #c3e386;
-  --main-text-color:           #577c0e;
-  /* Cards */
-  --card-background-color:     white;
-  --card-text-color:           #484089;
-}
-
-body,
-html {
-  height: 100vh;
+  --bg: #c3e386;
+  --text: #243015;
+  --muted: #4d6328;
+  --accent: #4a6d0c;
+  --line: rgba(74, 109, 12, 0.22);
+  --fill: rgba(74, 109, 12, 0.1);
+  --gutter: 1.5rem;
+  --photo-inset: 0.5rem;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  padding: 10%;
-  color: var(--main-text-color);
-  background-color: var(--main-background-color);
-  background-image: url('../../assets/images/presenting.jpg');
+  min-height: 100vh;
+  padding: 2.5rem var(--gutter) 4rem;
+  color: var(--text);
+  background-color: var(--bg);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 0 var(--photo-inset);
+  z-index: -1;
+  pointer-events: none;
+  background-color: var(--bg);
+  background-image: url("../images/presenting.jpg");
   background-repeat: no-repeat;
   background-position: left bottom;
-  background-blend-mode: screen;
   background-size: cover;
+  background-blend-mode: screen;
 }
 
-@media (orientation: landscape) {
-  body { display: flex; }
-  .container { margin-top: auto; }
-}
+@media screen and (min-width: 800px) {
+  :root {
+    --gutter: 8%;
+    --photo-inset: calc(8% - 4rem);
+  }
 
-/* Better layout on wide screen */
-@media screen and (min-width: 1280px) {
-  body { padding: 7%; }
+  body {
+    padding: 4.5rem var(--gutter);
+  }
 }
 
 .container {
-  max-width: 800px;
-}
-
-
-a,
-a:visited {
-  color: inherit;
+  max-width: 58rem;
 }
 
 h1 {
-  margin-bottom: -0.25em;
+  margin: 0 0 0.15em;
+  font-family: ui-monospace, "Cascadia Code", "SF Mono", Consolas, monospace;
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--accent);
 }
 
-.lead {
-  margin-bottom: 3rem;
-  font-size: 1.7rem;
+h2 {
+  margin: 2.25rem 0 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.role {
+  margin-bottom: 0.15rem;
+  font-size: 1.15rem;
   font-weight: 600;
 }
 
+.degree,
+.when,
+.credit,
+.aside {
+  color: var(--muted);
+}
 
-/*
- * Buttons
- */
+.degree {
+  margin-bottom: 1.75rem;
+}
 
-.buttons { margin-top: 1.5rem; }
+.intro {
+  font-size: 1.05rem;
+}
+
+a {
+  color: var(--accent);
+}
+
+a:visited {
+  color: var(--accent);
+}
+
+a:hover {
+  color: var(--text);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.work,
+.theses,
+.links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.work > li + li,
+.theses li + li {
+  margin-top: 1.15rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--line);
+}
+
+.work-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.accomplishments {
+  margin: 0.45rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.accomplishments li {
+  margin-top: 0.25rem;
+}
+
+.work p,
+.theses p {
+  margin: 0;
+}
+
+.when {
+  font-size: 0.92rem;
+}
+
+.theses a {
+  display: block;
+  text-decoration: none;
+}
+
+.theses a:hover strong {
+  text-decoration: underline;
+}
+
+.theses strong {
+  display: block;
+  margin-bottom: 0.15rem;
+  color: var(--text);
+}
+
+.aside {
+  margin-top: 0;
+  font-size: 0.95rem;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.badges li {
+  padding: 0.28rem 0.7rem;
+  border: 1px solid var(--line);
+  background: var(--fill);
+  border-radius: 999px;
+  font-family: ui-monospace, "Cascadia Code", "SF Mono", Consolas, monospace;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
 
 .button {
-  margin-right: 0.2rem;
-  padding: .8rem;
-  border: 1px solid rgba(87, 124, 14, 0.35);
-  background: rgba(87, 124, 14, 0.2);
-  fill: var(--main-text-color);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--line);
+  background: var(--fill);
+  color: var(--accent);
+  fill: var(--accent);
   border-radius: 2px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.button:visited {
+  color: var(--accent);
 }
 
 .button:hover,
-.button:active,
-.button:focus {
-  border: 1px solid rgba(87, 124, 14, 0.65);
-  background: rgba(87, 124, 14, 0.3);
+.button:focus-visible {
+  border-color: rgba(74, 109, 12, 0.55);
+  background: rgba(74, 109, 12, 0.18);
+  color: var(--text);
+  fill: var(--text);
 }
-
-.book {
-  margin-right: 0.2rem;
-  padding: .8rem;
-  border: 1px solid rgba(87, 124, 14, 0.35);
-  background: rgba(87, 124, 14, 0.2);
-  fill: var(--main-text-color);
-  border-radius: 2px;
-  margin-top: 0.5rem;
-}
-
-.book:first-child {
-  margin-top: 2rem;
-}
-
-/* Logos */
 
 .icon {
-  max-width: 1.25em;
+  width: 1.1em;
+  height: 1.1em;
 }
 
-.form-popup {
-  display: none;
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+.credit {
+  margin-top: 3rem;
+  margin-bottom: 0;
+  font-size: 0.85rem;
 }
 
-form {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 0 20px 20px 20px;
-  border: 1px solid #888;
-  width: 30%; /* Could be more or less, depending on screen size */
-}
-
-.btn-cancel {
-  border: none;
-  background-color: transparent;
-  float: right;
-  font-size: 1.3rem;
-  margin-right: -1rem;
-}
-
-.open-button {
-  font-size: 0.8rem;
-}
-
-button {
-  cursor: pointer;
-}
-
-.button-margin {
-  margin-left: 2000.2rem;
-}
-
-.flex-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.more-about-me {
-  grid-column-end: none;
-}
-
-.more-about-me a {
-  cursor: pointer;
+.credit a {
+  color: inherit;
 }
